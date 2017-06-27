@@ -70,7 +70,7 @@
 		}
         .tc { 
             text-align: center; 
-            font-size: 3rem; 
+            font-size: 2.9rem; 
             font-weight: bold; 
         }
         .wf { 
@@ -169,16 +169,19 @@
         v4 = $('.fml .counter'),
         v5 = $('.angry .counter'),
         v6 = $('.shock .counter');
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
 
     function refreshCounts() {
         var url = 'https://graph.facebook.com/v2.8/?ids=' + postID + '&fields=' + reactions + '&access_token=' + access_token;
     	$.getJSON(url, function(res){
-    		v1.text(defaultCount + res[postID].reactions_like.summary.total_count);
-    		v2.text(defaultCount + res[postID].reactions_love.summary.total_count);
-            v3.text(defaultCount + res[postID].reactions_sad.summary.total_count);
-            v4.text(defaultCount + res[postID].reactions_haha.summary.total_count);
-            v5.text(defaultCount + res[postID].reactions_angry.summary.total_count);
-            v6.text(defaultCount + res[postID].reactions_wow.summary.total_count);
+    		v1.text(numberWithCommas(defaultCount + res[postID].reactions_like.summary.total_count));
+    		v2.text(numberWithCommas(defaultCount + res[postID].reactions_love.summary.total_count));
+            v3.text(numberWithCommas(defaultCount + res[postID].reactions_sad.summary.total_count));
+            v4.text(numberWithCommas(defaultCount + res[postID].reactions_haha.summary.total_count));
+            v5.text(numberWithCommas(defaultCount + res[postID].reactions_angry.summary.total_count));
+            v6.text(numberWithCommas(defaultCount + res[postID].reactions_wow.summary.total_count));
     	});
     }
 
