@@ -1,1 +1,1 @@
-# live-reactions-template
+# live-reactions
