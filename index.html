@@ -37,17 +37,20 @@
         #container {
             width: 800px;
             position: absolute;
-            left: 260px;
-            top: 125px;
+            left: 20px;
+            top: 160px;
 
             padding: 10px;
             border: 3px #fff solid;
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d9b361+0,d1a057+100&0.8+0,0.8+100 */
-            background: -moz-linear-gradient(top, rgba(217,179,97,0.8) 0%, rgba(209,160,87,0.8) 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(top, rgba(217,179,97,0.8) 0%,rgba(209,160,87,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to bottom, rgba(217,179,97,0.8) 0%,rgba(209,160,87,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccd9b361', endColorstr='#ccd1a057',GradientType=0 ); /* IE6-9 */
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff7a01+0,cc6002+100&0.8+0,0.8+100 */
+            background: -moz-linear-gradient(top, rgba(255,122,1,0.8) 0%, rgba(204,96,2,0.8) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(255,122,1,0.8) 0%,rgba(204,96,2,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(255,122,1,0.8) 0%,rgba(204,96,2,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccff7a01', endColorstr='#cccc6002',GradientType=0 ); /* IE6-9 */
         }
+
+        /* 38D logo: ff7a01 */
+
         header .logo { 
             position: relative; 
             margin:100px auto 20px; 
@@ -56,7 +59,7 @@
         h1 { 
             text-align: center; 
             width:100%; 
-            font-size: 50px; 
+            font-size: 40px; 
             padding: 30px 0; 
             margin:0; 
             color:#fff;
@@ -104,9 +107,10 @@
         }
         .reaction_label {
             vertical-align: middle;
-            font-size: 30px;
+            font-size: 35px;
             color: #fff;
             display: block;
+            font-weight: bold;
         }
         #reactions {
             margin-top: 30px;
@@ -115,38 +119,42 @@
 </head>
 <body>
     <div id="container">
-    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h1>
+    <h1>2 extra years until a complete Brexit: how do you feel?</h1>
     <!-- REACTIONS -->
         <div id="reactions">
         	<div class="answer">
                 <div class="tc wf likes"><img class="emoji" src="emojis/like.png"><span class="counter"></span></div>
-                <div class="reaction_label">Morbi sed nulla nec lectus rhoncus sodales.</div>
-            </div>
-
-            <div class="answer">
-                <div class="tc wf happy"><img class="emoji" src="emojis/love.png"><span class="counter"></span></div>
-                <div class="reaction_label">Morbi sed nulla</div>
+                <div class="reaction_label">I’m happy - it’s the right decision</div>
             </div>
 
             <div class="answer">
                 <div class="tc wf sad"><img class="emoji" src="emojis/sad.png"><span class="counter"></span></div>
-                <div class="reaction_label">Morbi sed nulla nec lectus rhoncus sodales.</div>
+                <div class="reaction_label">I’m worried - I want us to stay in the EU for longer</div>
+            </div>
+
+            <!--<div class="answer">
+                <div class="tc wf happy"><img class="emoji" src="emojis/love.png"><span class="counter"></span></div>
+                <div class="reaction_label">Morbi sed nulla</div>
+            </div>-->
+
+            <div class="answer">
+                <div class="tc wf angry"><img class="emoji" src="emojis/angry.png"><span class="counter"></span></div>
+                <div class="reaction_label">I’m not happy - I want us to leave the EU ASAP</div>
             </div>
 
             <div class="answer">
                 <div class="tc wf fml"><img class="emoji" src="emojis/haha.png"><span class="counter"></span></div>
-                <div class="reaction_label">Morbi sed nulla nec lectus rhoncus sodales.</div>
+                <div class="reaction_label">I’m not bothered</div>
             </div>
 
-            <div class="answer">
-                <div class="tc wf angry"><img class="emoji" src="emojis/angry.png"><span class="counter"></span></div>
-                <div class="reaction_label">Morbi sed nulla nec lectus rhoncus sodales.</div>
-            </div>
-
-            <div class="answer">
+            <!--<div class="answer">
                 <div class="tc wf shock"><img class="emoji" src="emojis/shock.png"><span class="counter"></span></div>
-                <div class="reaction_label">Morbi sed nulla nec lectus rhoncus sodales.</div>
-            <div>
+                <div class="reaction_label">Yes, I think it's necessary, there are so many laws to change</div>
+            </div>-->
+
+
+
+
         </div>
     </div>
     <script src="jquery.min.js"></script>
@@ -154,9 +162,9 @@
     <script>
     "use strict";
     var access_token = '1686352151379786|wXmkZs08woQk6jsdH56gXg1hu0A'; // PASTE HERE YOUR FACEBOOK ACCESS TOKEN
-    var postID = '135667170331295'; // PASTE HERE YOUR POST ID 
-    var refreshTime = 5; // Refresh time in seconds
-    var defaultCount = 900000; // Default count to start with
+    var postID = '10159389590130788'; // PASTE HERE YOUR POST ID 
+    var refreshTime = 2; // Refresh time in seconds
+    var defaultCount = 0; // Default count to start with
 
     var reactions = ['LIKE', 'LOVE', 'WOW', 'HAHA', 'SAD', 'ANGRY'].map(function (e) {
         var code = 'reactions_' + e.toLowerCase();
